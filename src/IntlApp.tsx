@@ -1,7 +1,12 @@
 import IntlData from "./model/IntlData";
 import * as React from "react";
 import { IntlProvider } from "react-intl";
-import { Route, Router, Switch } from "react-router-dom";
+import {
+  BrowserRouter,
+  Route,
+  Router,
+  Routes as ReactRouterRoutes,
+} from "react-router-dom";
 import Routing from "./util/Routing";
 import Routes from "./util/Routes";
 import Login from "./component/login/Login";
@@ -22,9 +27,9 @@ const IntlWrapper: React.FC<IntlWrapperProps> = (props) => {
   const { intl } = props;
   return (
     <IntlProvider {...intl}>
-      <Router history={Routing.history}>
+      <BrowserRouter>
         <React.Suspense fallback={<Mask />}>
-          <Switch>
+          <ReactRouterRoutes>
             <Route path={Routes.login.path} component={Login} />
             <Route path={Routes.register.path} component={Register} />
             <BreadcrumbRoute
@@ -36,9 +41,9 @@ const IntlWrapper: React.FC<IntlWrapperProps> = (props) => {
               title={intl.messages["main.nav.dashboard"]}
               component={MainView}
             />
-          </Switch>
+          </ReactRouterRoutes>
         </React.Suspense>
-      </Router>
+      </BrowserRouter>
     </IntlProvider>
   );
 };

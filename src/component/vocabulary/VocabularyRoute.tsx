@@ -1,5 +1,5 @@
 import * as React from "react";
-import { Switch } from "react-router";
+import { Routes as ReactRouterRoutes } from "react-router";
 import Routes from "../../util/Routes";
 import DynamicBreadcrumbRoute from "../breadcrumb/DynamicBreadcrumbRoute";
 import TermDetail from "../term/TermDetail";
@@ -13,7 +13,7 @@ import ResourceFileDetail from "../resource/ResourceFileDetail";
 const VocabularyRoute: React.FC = () => {
   const { i18n } = useI18n();
   return (
-    <Switch>
+    <ReactRouterRoutes>
       <BreadcrumbRoute
         title={i18n("glossary.createTerm.breadcrumb")}
         path={Routes.createVocabularyTerm.path}
@@ -50,7 +50,7 @@ const VocabularyRoute: React.FC = () => {
         includeSearch={true}
         component={VocabularySummary}
       />
-    </Switch>
+    </ReactRouterRoutes>
   );
 };
 

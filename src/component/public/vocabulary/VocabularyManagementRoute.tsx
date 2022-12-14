@@ -1,5 +1,5 @@
 import * as React from "react";
-import { Route, Switch } from "react-router";
+import { Route, Routes as ReactRouterRoutes } from "react-router";
 import DynamicBreadcrumbRoute from "../../breadcrumb/DynamicBreadcrumbRoute";
 import Routes from "../../../util/Routes";
 import VocabularyRoute from "./VocabularyRoute";
@@ -7,7 +7,7 @@ import VocabularyManagement from "./VocabularyManagement";
 
 const VocabularyManagementRoute: React.FC = () => {
   return (
-    <Switch>
+    <ReactRouterRoutes>
       <DynamicBreadcrumbRoute
         asset="vocabulary"
         path={Routes.publicVocabularySnapshotSummary.path}
@@ -24,7 +24,7 @@ const VocabularyManagementRoute: React.FC = () => {
         component={VocabularyManagement}
         path={Routes.publicVocabularies.path}
       />
-    </Switch>
+    </ReactRouterRoutes>
   );
 };
 

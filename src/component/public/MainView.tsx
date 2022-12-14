@@ -1,6 +1,11 @@
 import * as React from "react";
 import withI18n, { HasI18n } from "../hoc/withI18n";
-import { Route, RouteComponentProps, Switch, withRouter } from "react-router";
+import {
+  Route,
+  RouteComponentProps,
+  Routes as ReactRouterRoutes,
+  withRouter,
+} from "react-router";
 import Utils from "../../util/Utils";
 import classNames from "classnames";
 import { Container, Nav, Navbar, NavItem } from "reactstrap";
@@ -127,7 +132,7 @@ export class MainView extends React.Component<MainViewProps, MainViewState> {
               "content-container-dashboard": this.isDashboardRoute(),
             })}
           >
-            <Switch>
+            <ReactRouterRoutes>
               <BreadcrumbRoute
                 title={i18n("main.nav.vocabularies")}
                 path={Routes.publicVocabularies.path}
@@ -149,7 +154,7 @@ export class MainView extends React.Component<MainViewProps, MainViewState> {
                 component={Search}
               />
               <Route component={Dashboard} />
-            </Switch>
+            </ReactRouterRoutes>
           </Container>
         </div>
         <Footer authenticated={false} sidebarExpanded={sidebarExpanded} />

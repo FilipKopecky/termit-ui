@@ -10,7 +10,12 @@ import User, { EMPTY_USER } from "../model/User";
 import Routes from "../util/Routes";
 import Footer from "./footer/Footer";
 import { logout } from "../action/ComplexActions";
-import { Route, RouteComponentProps, Switch, withRouter } from "react-router";
+import {
+  Route,
+  RouteComponentProps,
+  Routes as ReactRouterRoutes,
+  withRouter,
+} from "react-router";
 import Messages from "./message/Messages";
 import NavbarSearch from "./search/label/NavbarSearch";
 import { ThunkDispatch } from "../util/Types";
@@ -160,7 +165,7 @@ export class MainView extends React.Component<MainViewProps, MainViewState> {
             })}
           >
             <React.Suspense fallback={<Mask />}>
-              <Switch>
+              <ReactRouterRoutes>
                 <BreadcrumbRoute
                   title={i18n("main.nav.admin")}
                   path={Routes.administration.path}
@@ -197,7 +202,7 @@ export class MainView extends React.Component<MainViewProps, MainViewState> {
                   component={ProfileRoute}
                 />
                 <Route component={Dashboard} />
-              </Switch>
+              </ReactRouterRoutes>
             </React.Suspense>
           </Container>
         </div>

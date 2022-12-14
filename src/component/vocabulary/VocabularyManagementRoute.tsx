@@ -1,5 +1,5 @@
 import * as React from "react";
-import { Route, Switch } from "react-router";
+import { Route, Routes as ReactRouterRoutes } from "react-router";
 import Routes from "../../util/Routes";
 import DynamicBreadcrumbRoute from "../breadcrumb/DynamicBreadcrumbRoute";
 import BreadcrumbRoute from "../breadcrumb/BreadcrumbRoute";
@@ -12,7 +12,7 @@ import ImportVocabularyRoute from "./ImportVocabularyRoute";
 const VocabularyManagementRoute: React.FC = () => {
   const { i18n } = useI18n();
   return (
-    <Switch>
+    <ReactRouterRoutes>
       <BreadcrumbRoute
         title={i18n("vocabulary.create.title")}
         path={Routes.createVocabulary.path}
@@ -36,7 +36,7 @@ const VocabularyManagementRoute: React.FC = () => {
         component={VocabularyRoute}
       />
       <Route component={VocabularyManagement} path={Routes.vocabularies.path} />
-    </Switch>
+    </ReactRouterRoutes>
   );
 };
 

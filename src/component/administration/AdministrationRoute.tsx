@@ -3,7 +3,7 @@ import { IfGranted } from "react-authorization";
 import VocabularyUtils from "../../util/VocabularyUtils";
 import { useSelector } from "react-redux";
 import TermItState from "../../model/TermItState";
-import { Route, Switch } from "react-router";
+import { Route, Routes as ReactRouterRoutes } from "react-router";
 import Routes from "../../util/Routes";
 import BreadcrumbRoute from "../breadcrumb/BreadcrumbRoute";
 import CreateNewUser from "./CreateNewUser";
@@ -24,7 +24,7 @@ const AdministrationRoute: React.FC = () => {
       actual={user.types}
       unauthorized={<Unauthorized />}
     >
-      <Switch>
+      <ReactRouterRoutes>
         <BreadcrumbRoute
           title={i18n("administration.users.create")}
           path={Routes.createNewUser.path}
@@ -35,7 +35,7 @@ const AdministrationRoute: React.FC = () => {
           component={Administration}
           exact={true}
         />
-      </Switch>
+      </ReactRouterRoutes>
     </IfGranted>
   );
 };
