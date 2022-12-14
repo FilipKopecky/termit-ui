@@ -10,6 +10,7 @@ import { connect } from "react-redux";
 import TermItState from "./model/TermItState";
 import BreadcrumbRoute from "./component/breadcrumb/BreadcrumbRoute";
 import Mask from "./component/misc/Mask";
+import { CompatRouter } from "react-router-dom-v5-compat";
 
 const PublicMainView = React.lazy(() => import("./component/public/MainView"));
 const MainView = React.lazy(() => import("./component/MainView"));
@@ -23,21 +24,23 @@ const IntlWrapper: React.FC<IntlWrapperProps> = (props) => {
   return (
     <IntlProvider {...intl}>
       <Router history={Routing.history}>
-        <React.Suspense fallback={<Mask />}>
-          <Switch>
-            <Route path={Routes.login.path} component={Login} />
-            <Route path={Routes.register.path} component={Register} />
-            <BreadcrumbRoute
-              path={Routes.publicDashboard.path}
-              title={intl.messages["main.nav.dashboard"]}
-              component={PublicMainView}
-            />
-            <BreadcrumbRoute
-              title={intl.messages["main.nav.dashboard"]}
-              component={MainView}
-            />
-          </Switch>
-        </React.Suspense>
+        <CompatRouter>
+          <React.Suspense fallback={<Mask />}>
+            <Switch>
+              <Route path={Routes.login.path} component={Login} />
+              <Route path={Routes.register.path} component={Register} />
+              <BreadcrumbRoute
+                path={Routes.publicDashboard.path}
+                title={intl.messages["main.nav.dashboard"]}
+                component={PublicMainView}
+              />
+              <BreadcrumbRoute
+                title={intl.messages["main.nav.dashboard"]}
+                component={MainView}
+              />
+            </Switch>
+          </React.Suspense>
+        </CompatRouter>
       </Router>
     </IntlProvider>
   );

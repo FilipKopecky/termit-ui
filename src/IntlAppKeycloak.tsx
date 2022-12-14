@@ -11,6 +11,7 @@ import Mask from "./component/misc/Mask";
 import { useKeycloak } from "@react-keycloak/web";
 import AuthUnavailable from "./component/misc/AuthUnavailable";
 import LoginKeycloak from "./component/login/LoginKeycloak";
+import { CompatRouter } from "react-router-dom-v5-compat";
 
 const PublicMainView = React.lazy(() => import("./component/public/MainView"));
 const MainView = React.lazy(() => import("./component/MainView"));
@@ -52,20 +53,22 @@ const IntlWrapper: React.FC<IntlWrapperProps> = (props) => {
   return (
     <IntlProvider {...intl}>
       <Router history={Routing.history}>
-        <React.Suspense fallback={<Mask />}>
-          <Switch>
-            <Route path={Routes.login.path} component={LoginKeycloak} />
-            <BreadcrumbRoute
-              path={Routes.publicDashboard.path}
-              title={intl.messages["main.nav.dashboard"]}
-              component={PublicMainView}
-            />
-            <BreadcrumbRoute
-              title={intl.messages["main.nav.dashboard"]}
-              component={MainView}
-            />
-          </Switch>
-        </React.Suspense>
+        <CompatRouter>
+          <React.Suspense fallback={<Mask />}>
+            <Switch>
+              <Route path={Routes.login.path} component={LoginKeycloak} />
+              <BreadcrumbRoute
+                path={Routes.publicDashboard.path}
+                title={intl.messages["main.nav.dashboard"]}
+                component={PublicMainView}
+              />
+              <BreadcrumbRoute
+                title={intl.messages["main.nav.dashboard"]}
+                component={MainView}
+              />
+            </Switch>
+          </React.Suspense>
+        </CompatRouter>
       </Router>
     </IntlProvider>
   );
