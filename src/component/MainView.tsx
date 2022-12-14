@@ -166,42 +166,42 @@ export class MainView extends React.Component<MainViewProps, MainViewState> {
           >
             <React.Suspense fallback={<Mask />}>
               <ReactRouterRoutes>
-                <BreadcrumbRoute
-                  title={i18n("main.nav.admin")}
-                  path={Routes.administration.path}
-                  component={AdministrationRoute}
-                />
-                <BreadcrumbRoute
-                  title={i18n("main.nav.vocabularies")}
-                  path={Routes.vocabularies.path}
-                  component={VocabularyManagementRoute}
-                />
-                <BreadcrumbRoute
-                  title={i18n("main.nav.statistics")}
-                  path={Routes.statistics.path}
-                  component={Statistics}
-                />
-                <BreadcrumbRoute
-                  title={i18n("main.nav.searchTerms")}
-                  path={Routes.searchTerms.path}
-                  component={SearchTerms}
-                />
-                <BreadcrumbRoute
-                  title={i18n("main.nav.searchVocabularies")}
-                  path={Routes.searchVocabularies.path}
-                  component={SearchVocabularies}
-                />
-                <BreadcrumbRoute
-                  title={i18n("main.nav.search")}
-                  path={Routes.search.path}
-                  component={Search}
-                />
-                <BreadcrumbRoute
-                  title={i18n("main.user-profile")}
-                  path={Routes.profile.path}
-                  component={ProfileRoute}
-                />
-                <Route component={Dashboard} />
+                {/*<BreadcrumbRoute*/}
+                {/*  title={i18n("main.nav.admin")}*/}
+                {/*  path={Routes.administration.path}*/}
+                {/*  component={AdministrationRoute}*/}
+                {/*/>*/}
+                {/*<BreadcrumbRoute*/}
+                {/*  title={i18n("main.nav.vocabularies")}*/}
+                {/*  path={Routes.vocabularies.path}*/}
+                {/*  component={VocabularyManagementRoute}*/}
+                {/*/>*/}
+                {/*<BreadcrumbRoute*/}
+                {/*  title={i18n("main.nav.statistics")}*/}
+                {/*  path={Routes.statistics.path}*/}
+                {/*  component={Statistics}*/}
+                {/*/>*/}
+                {/*<BreadcrumbRoute*/}
+                {/*  title={i18n("main.nav.searchTerms")}*/}
+                {/*  path={Routes.searchTerms.path}*/}
+                {/*  component={SearchTerms}*/}
+                {/*/>*/}
+                {/*<BreadcrumbRoute*/}
+                {/*  title={i18n("main.nav.searchVocabularies")}*/}
+                {/*  path={Routes.searchVocabularies.path}*/}
+                {/*  component={SearchVocabularies}*/}
+                {/*/>*/}
+                {/*<BreadcrumbRoute*/}
+                {/*  title={i18n("main.nav.search")}*/}
+                {/*  path={Routes.search.path}*/}
+                {/*  component={Search}*/}
+                {/*/>*/}
+                {/*<BreadcrumbRoute*/}
+                {/*  title={i18n("main.user-profile")}*/}
+                {/*  path={Routes.profile.path}*/}
+                {/*  component={ProfileRoute}*/}
+                {/*/>*/}
+                <Route element={Dashboard} />
               </ReactRouterRoutes>
             </React.Suspense>
           </Container>
@@ -249,3 +249,6 @@ export default connect(
     )
   )
 );
+{
+  /** TODO: Remove withRouter **/
+}

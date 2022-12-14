@@ -13,29 +13,30 @@ const VocabularyManagementRoute: React.FC = () => {
   const { i18n } = useI18n();
   return (
     <ReactRouterRoutes>
-      <BreadcrumbRoute
-        title={i18n("vocabulary.create.title")}
-        path={Routes.createVocabulary.path}
-        component={CreateVocabularyRoute}
-      />
-      <BreadcrumbRoute
-        title={i18n("vocabulary.import.title")}
-        path={Routes.importVocabulary.path}
-        component={ImportVocabularyRoute}
-      />
-      <DynamicBreadcrumbRoute
-        asset="vocabulary"
-        path={Routes.vocabularySnapshotSummary.path}
-        includeSearch={true}
-        component={VocabularyRoute}
-      />
-      <DynamicBreadcrumbRoute
-        asset="vocabulary"
-        path={Routes.vocabularySummary.path}
-        includeSearch={true}
-        component={VocabularyRoute}
-      />
-      <Route component={VocabularyManagement} path={Routes.vocabularies.path} />
+      {/** TODO: Return the breadcrumb **/}
+      {/*<BreadcrumbRoute*/}
+      {/*  title={i18n("vocabulary.create.title")}*/}
+      {/*  path={Routes.createVocabulary.path}*/}
+      {/*  component={CreateVocabularyRoute}*/}
+      {/*/>*/}
+      {/*<BreadcrumbRoute*/}
+      {/*  title={i18n("vocabulary.import.title")}*/}
+      {/*  path={Routes.importVocabulary.path}*/}
+      {/*  component={ImportVocabularyRoute}*/}
+      {/*/>*/}
+      {/*<DynamicBreadcrumbRoute*/}
+      {/*  asset="vocabulary"*/}
+      {/*  path={Routes.vocabularySnapshotSummary.path}*/}
+      {/*  includeSearch={true}*/}
+      {/*  component={VocabularyRoute}*/}
+      {/*/>*/}
+      {/*<DynamicBreadcrumbRoute*/}
+      {/*  asset="vocabulary"*/}
+      {/*  path={Routes.vocabularySummary.path}*/}
+      {/*  includeSearch={true}*/}
+      {/*  component={VocabularyRoute}*/}
+      {/*/>*/}
+      <Route element={VocabularyManagement} path={Routes.vocabularies.path} />
     </ReactRouterRoutes>
   );
 };

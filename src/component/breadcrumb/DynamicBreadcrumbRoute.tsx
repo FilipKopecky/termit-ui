@@ -29,7 +29,9 @@ const DynamicBreadcrumbRoute = (props: DynamicBreadcrumbRouteProps) => {
       <Component {...routeProps} />
     </Breadcrumb>
   );
-
+  {
+    /** TODO: Solve the render issue, probably gonna be gone when replacing the breadCrumb **/
+  }
   return <Route {...rest} render={renderRoute} />;
 };
 

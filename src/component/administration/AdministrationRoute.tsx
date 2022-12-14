@@ -25,15 +25,17 @@ const AdministrationRoute: React.FC = () => {
       unauthorized={<Unauthorized />}
     >
       <ReactRouterRoutes>
-        <BreadcrumbRoute
-          title={i18n("administration.users.create")}
-          path={Routes.createNewUser.path}
-          component={CreateNewUser}
-        />
+        {/**TODO: Return the breadCrumbs **/}
+        {/*<BreadcrumbRoute*/}
+        {/*  title={i18n("administration.users.create")}*/}
+        {/*  path={Routes.createNewUser.path}*/}
+        {/*  component={CreateNewUser}*/}
+        {/*/>*/}
+        {/** TODO: check if removal of exact didnt break anything **/}
         <Route
           path={Routes.administration.path}
-          component={Administration}
-          exact={true}
+          element={Administration}
+          // exact={true}
         />
       </ReactRouterRoutes>
     </IfGranted>

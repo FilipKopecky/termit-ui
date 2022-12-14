@@ -11,12 +11,13 @@ const ProfileRoute: React.FC<HasI18n> = () => {
   const { i18n } = useI18n();
   return (
     <ReactRouterRoutes>
-      <BreadcrumbRoute
-        title={i18n("profile.change-password")}
-        path={Routes.changePassword.path}
-        component={ChangePassword}
-      />
-      <Route component={Profile} />
+      {/** TODO: Return the breadcrumb **/}
+      {/*<BreadcrumbRoute*/}
+      {/*  title={i18n("profile.change-password")}*/}
+      {/*  path={Routes.changePassword.path}*/}
+      {/*  component={ChangePassword}*/}
+      {/*/>*/}
+      <Route element={Profile} />
     </ReactRouterRoutes>
   );
 };

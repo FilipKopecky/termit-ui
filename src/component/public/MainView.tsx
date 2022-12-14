@@ -133,27 +133,28 @@ export class MainView extends React.Component<MainViewProps, MainViewState> {
             })}
           >
             <ReactRouterRoutes>
-              <BreadcrumbRoute
-                title={i18n("main.nav.vocabularies")}
-                path={Routes.publicVocabularies.path}
-                component={VocabularyManagementRoute}
-              />
-              <BreadcrumbRoute
-                title={i18n("main.nav.searchTerms")}
-                path={Routes.publicSearchTerms.path}
-                component={SearchTerms}
-              />
-              <BreadcrumbRoute
-                title={i18n("main.nav.searchVocabularies")}
-                path={Routes.publicSearchVocabularies.path}
-                component={SearchVocabularies}
-              />
-              <BreadcrumbRoute
-                title={i18n("main.nav.search")}
-                path={Routes.publicSearch.path}
-                component={Search}
-              />
-              <Route component={Dashboard} />
+              {/** TODO: Return the breadcrumb **/}
+              {/*<BreadcrumbRoute*/}
+              {/*  title={i18n("main.nav.vocabularies")}*/}
+              {/*  path={Routes.publicVocabularies.path}*/}
+              {/*  component={VocabularyManagementRoute}*/}
+              {/*/>*/}
+              {/*<BreadcrumbRoute*/}
+              {/*  title={i18n("main.nav.searchTerms")}*/}
+              {/*  path={Routes.publicSearchTerms.path}*/}
+              {/*  component={SearchTerms}*/}
+              {/*/>*/}
+              {/*<BreadcrumbRoute*/}
+              {/*  title={i18n("main.nav.searchVocabularies")}*/}
+              {/*  path={Routes.publicSearchVocabularies.path}*/}
+              {/*  component={SearchVocabularies}*/}
+              {/*/>*/}
+              {/*<BreadcrumbRoute*/}
+              {/*  title={i18n("main.nav.search")}*/}
+              {/*  path={Routes.publicSearch.path}*/}
+              {/*  component={Search}*/}
+              {/*/>*/}
+              <Route element={Dashboard} />
             </ReactRouterRoutes>
           </Container>
         </div>
