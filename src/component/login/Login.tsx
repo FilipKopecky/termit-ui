@@ -15,7 +15,7 @@ import { login } from "../../action/AsyncUserActions";
 import EnhancedInput, { LabelDirection } from "../misc/EnhancedInput";
 import Constants, { getEnv } from "../../util/Constants";
 import "./Login.scss";
-import { Link } from "react-router-dom";
+import { Link } from "react-router-dom-v5-compat";
 import WindowTitle from "../misc/WindowTitle";
 import ConfigParam from "../../util/ConfigParam";
 

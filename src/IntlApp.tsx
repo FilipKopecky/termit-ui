@@ -10,7 +10,7 @@ import { connect } from "react-redux";
 import TermItState from "./model/TermItState";
 import BreadcrumbRoute from "./component/breadcrumb/BreadcrumbRoute";
 import Mask from "./component/misc/Mask";
-import { CompatRouter } from "react-router-dom-v5-compat";
+import { CompatRouter, CompatRoute } from "react-router-dom-v5-compat";
 
 const PublicMainView = React.lazy(() => import("./component/public/MainView"));
 const MainView = React.lazy(() => import("./component/MainView"));
@@ -21,13 +21,14 @@ interface IntlWrapperProps {
 
 const IntlWrapper: React.FC<IntlWrapperProps> = (props) => {
   const { intl } = props;
+  console.log(Routes.publicVocabularies.link());
   return (
     <IntlProvider {...intl}>
       <Router history={Routing.history}>
         <CompatRouter>
           <React.Suspense fallback={<Mask />}>
             <Switch>
-              <Route path={Routes.login.path} component={Login} />
+              <CompatRoute path={Routes.login.path} component={Login} />
               <Route path={Routes.register.path} component={Register} />
               <BreadcrumbRoute
                 path={Routes.publicDashboard.path}
